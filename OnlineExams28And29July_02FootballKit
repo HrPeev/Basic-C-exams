@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_02FootballKit
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double tshurtPrice = double.Parse(Console.ReadLine());
+            double sumToWinBall = double.Parse(Console.ReadLine());
+            double shortPrice = tshurtPrice * 0.75;
+            double socksPrice = shortPrice * 0.20;
+            double shoesPrice =(tshurtPrice + shortPrice)*2;
+            double totalSum = (tshurtPrice + shortPrice + socksPrice + shoesPrice) * 0.85;
+            
+            if (sumToWinBall<=totalSum)
+            {
+                Console.WriteLine("Yes, he will earn the world-cup replica ball!");
+                Console.WriteLine("His sum is {0:f2} lv.",totalSum);
+            }
+            else
+            {
+                Console.WriteLine("No, he will not earn the world-cup replica ball.");
+                Console.WriteLine("He needs {0:f2} lv. more.",sumToWinBall-totalSum);
+            }
+        }
+    }
+}
