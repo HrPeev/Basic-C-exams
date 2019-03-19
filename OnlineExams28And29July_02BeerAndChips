@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_02BeerAndChips
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            double buget = double.Parse(Console.ReadLine());
+            int beers = int.Parse(Console.ReadLine());
+            int chips = int.Parse(Console.ReadLine());
+            double beerPrice = 1.20;
+            double chipsPrice = (beers * beerPrice) * 0.45;            
+            if (buget>=(beers*beerPrice)+Math.Ceiling(chips*chipsPrice))
+            {
+                Console.WriteLine("{0} bought a snack and has {1:f2} leva left.",name,buget- ((beers * beerPrice) + Math.Ceiling(chips * chipsPrice)));
+            }
+            else
+            {
+                Console.WriteLine("{0} needs {1:f2} more leva!",name, ((beers * beerPrice) + Math.Ceiling(chips * chipsPrice))-buget);
+            }
+        }
+    }
+}
