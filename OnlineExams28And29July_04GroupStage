@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_04GroupStage
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string team = Console.ReadLine();
+            int matches = int.Parse(Console.ReadLine());
+            int goaldifference = 0;
+            int points = 0;
+            for (int i = 0; i < matches; i++)
+            {
+                int goalsIn = int.Parse(Console.ReadLine());
+                int goalsOut = int.Parse(Console.ReadLine());
+                if (goalsIn-goalsOut>0)
+                {
+                    points += 3;
+                }
+                else if (goalsIn-goalsOut==0)
+                {
+                    points += 1;
+                }
+                goaldifference += (goalsIn - goalsOut);
+            }
+            if (goaldifference>=0)
+            {
+                Console.WriteLine($"{team} has finished the group phase with {points} points.");
+                Console.WriteLine($"Goal difference: {goaldifference}.");
+            }
+            else
+            {
+                Console.WriteLine($"{team} has been eliminated from the group phase.");
+                Console.WriteLine($"Goal difference: {goaldifference}.");
+            }
+        }
+    }
+}
