@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_05GameInfo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string team = Console.ReadLine();
+            int matches = int.Parse(Console.ReadLine());
+            double sumMinutes = 0;
+            int matchWithPenalty = 0;
+            int matchWithAddingTime = 0;
+            for (int i = 0; i < matches; i++)
+            {
+                int minutesOnMatch = int.Parse(Console.ReadLine());
+                sumMinutes += minutesOnMatch;
+                if (minutesOnMatch>90&&minutesOnMatch<=120)
+                {
+                    matchWithAddingTime++;
+                }
+                else if (minutesOnMatch>120)
+                {
+                    matchWithPenalty++;
+                }
+
+
+            }
+            double averageTime = sumMinutes / matches;
+            Console.WriteLine($"{team} has played {sumMinutes} minutes. Average minutes per game: {averageTime:f2}");
+            Console.WriteLine($"Games with penalties: {matchWithPenalty}");
+            Console.WriteLine($"Games with additional time: {matchWithAddingTime}");
+        }
+    }
+}
