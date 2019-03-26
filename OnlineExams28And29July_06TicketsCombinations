@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_06TicketsCombinations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int combination = int.Parse(Console.ReadLine());
+            int count = 0;
+            int prize = 0;
+            for (int r = 0; r < combination; r++)
+            {           
+                for (int i = 'B'; i <= 'L'; i+=2)
+                {
+                    for (int j = 'f'; j >='a'; j--)
+                    {
+                        for (int k = 'A'; k <= 'C'; k++)
+                        {
+                            for (int h = 1; h <=10; h++)
+                            {
+                                for (int y = 10; y >=1; y--)
+                                {
+                                    if (count+1==combination)
+                                    {
+                                        char A = (char)i;
+                                        char B = (char)j;
+                                        char C = (char)k;
+                                        Console.WriteLine("Ticket combination: {0}{1}{2}{3}{4}", A, B, C, h, y);
+                                        prize = i + j + k + h + y;
+                                        Console.WriteLine($"Prize: {prize} lv.");
+                                    }
+                                    
+                                    count++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
