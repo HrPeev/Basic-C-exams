@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_06Substitute
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int K = int.Parse(Console.ReadLine());
+            int L = int.Parse(Console.ReadLine());
+            int M = int.Parse(Console.ReadLine());
+            int N = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = K; i <=8; i++)
+            {
+                for (int j= 9; j >=L;j --)
+                {
+                    for (int h = M; h <=8; h++)
+                    {
+                        for (int y = 9; y >=N; y--)
+                        {
+                            if (count==6)
+                            {
+                                break;
+                            }
+                            if (i%2==0 && h%2==0 && j%2!=0 && y%2!=0)
+                            {
+                                if (i==h && j==y)
+                                {
+                                    Console.WriteLine("Cannot change the same player.");
+                                   
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{i}{j} - {h}{y}");
+                                    count++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
