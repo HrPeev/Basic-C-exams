@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExams28And29July_05FanShop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int buget = int.Parse(Console.ReadLine());
+            int items = int.Parse(Console.ReadLine());
+            int spend = 0;
+            for (int i = 0; i < items; i++)
+            {
+                string souvenir = Console.ReadLine();
+                switch (souvenir)
+                {
+                    case "hoodie":
+                        spend += 30;
+                        break;
+                    case "keychain":
+                        spend += 4;
+                        break;
+                    case "T-shirt":
+                        spend += 20;
+                        break;
+                    case "flag":
+                        spend += 15;
+                        break;
+                    case "sticker":
+                        spend += 1;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (buget>=spend)
+            {
+                Console.WriteLine($"You bought {items} items and left with {buget-spend} lv.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money, you need {spend-buget} more lv.");
+            }
+        }
+    }
+}
