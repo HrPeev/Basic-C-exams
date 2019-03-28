@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineRetakeExam11And12August_02GoingHome
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int km = int.Parse(Console.ReadLine());
+            double gazConsumption = double.Parse(Console.ReadLine())/100;
+            double gazPrice = double.Parse(Console.ReadLine());
+            double moneyFromGame = double.Parse(Console.ReadLine());
+            double moneyToHome = moneyFromGame - ((km * gazConsumption) * gazPrice);
+            if (moneyToHome>=0)
+            {
+                Console.WriteLine("You can go home. {0:f2} money left.",moneyToHome);
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you cannot go home. Each will receive {0:f2} money.",moneyFromGame/5);
+            }
+        }
+    }
+}
