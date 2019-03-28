@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineRetakeExam11And12August_01ShopingTime
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int timeToRelax = int.Parse(Console.ReadLine());
+            double periferyPrice = double.Parse(Console.ReadLine());
+            double pricePrograms = double.Parse(Console.ReadLine());
+            double frappePrice = double.Parse(Console.ReadLine());
+            double spendedMoney = (periferyPrice * 3) + (pricePrograms * 2) + frappePrice;
+            timeToRelax -= 15;
+            Console.WriteLine("{0:f2}",spendedMoney);
+            Console.WriteLine(timeToRelax);
+        }
+    }
+}
