@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineRetakeExam11And12August_04OwnBussiness
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int aDimention = int.Parse(Console.ReadLine());
+            int lDimention = int.Parse(Console.ReadLine());
+            int hDimention = int.Parse(Console.ReadLine());
+            int cubic = aDimention * lDimention * hDimention;
+            string comps = "";
+            int computers = 0;
+            while (cubic - computers > 0)
+            {
+                comps = Console.ReadLine();
+                
+                if (comps!="Done")
+                {
+                    computers += int.Parse(comps);                    
+                }
+                else
+                {
+                    Console.WriteLine("{0} Cubic meters left.", cubic - computers);
+                    return;
+                }
+                
+            }
+            
+            Console.WriteLine("No more free space! You need {0} Cubic meters more.", computers - cubic);
+        }
+    }
+}
