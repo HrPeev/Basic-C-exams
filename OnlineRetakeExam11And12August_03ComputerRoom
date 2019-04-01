@@ -1,0 +1,176 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineRetakeExam11And12August_03ComputerRoom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string season = Console.ReadLine();
+            int hours = int.Parse(Console.ReadLine());
+            int people = int.Parse(Console.ReadLine());
+            string timeOfTheDay = Console.ReadLine();
+            double sum = 0;
+            if (timeOfTheDay=="day")
+            {
+                switch (season)
+                {
+                    case "march":
+                    case "april":
+                    case "may":
+                        if (people>=4)
+                        {
+                            if (hours>=5)
+                            {
+                                sum = ((people * 10.5*hours) * 0.9) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum= (people * 10.5 * hours) * 0.9;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            
+                        }
+                        else
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = (people * 10.5 * hours)  * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = people * 10.5 * hours;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                        }
+                        break;
+                    case "june":
+                    case "july":
+                    case "august":
+                        if (people >= 4)
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = ((people * 12.6 * hours) * 0.9) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = (people * 12.6 * hours) * 0.9;
+                                Console.WriteLine("Price per person for one hour: {0:f2}", sum / (hours * people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+
+                        }
+                        else
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = (people * 12.6 * hours) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = people * 12.6 * hours;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                switch (season)
+                {
+                    case "march":
+                    case "april":
+                    case "may":
+                        if (people >= 4)
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = ((people * 8.4 * hours) * 0.9) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = (people * 8.4 * hours) * 0.9;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+
+                        }
+                        else
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = (people * 8.4 * hours) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = people * 8.4 * hours;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                        }
+                        break;
+                    case "june":
+                    case "july":
+                    case "august":
+                        if (people >= 4)
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = ((people * 10.2 * hours) * 0.9) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = (people * 10.2 * hours) * 0.9;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+
+                        }
+                        else
+                        {
+                            if (hours >= 5)
+                            {
+                                sum = (people * 10.2 * hours) * 0.5;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}", sum);
+                            }
+                            else
+                            {
+                                sum = people * 10.2 * hours;
+                                Console.WriteLine("Price per person for one hour: {0:f2}",sum/(hours*people));
+                                Console.WriteLine("Total cost of the visit: {0:f2}",sum);
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+}
