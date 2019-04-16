@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExam_April2019_CinemaVoucher04
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int voucherValue = int.Parse(Console.ReadLine());           
+            int movieCount = 0;
+            int otherCount = 0;
+            while (voucherValue>=0)
+            {
+                string order = Console.ReadLine();
+
+                if (order=="End")
+                {
+                    break;
+                }
+                int spend = 0;
+                char[] charArray = order.ToCharArray();
+              
+                if (order.Length>8)
+                {
+                    spend =(int)charArray[0]+(int)charArray[1];
+                    voucherValue -= spend;
+                    if (voucherValue<0)
+                    {
+                        break;
+                    }
+                    movieCount++;
+                }
+                else
+                {
+                    spend = (int)charArray[0];
+                    voucherValue -= spend;
+                    if (voucherValue<0)
+                    {
+                        break;
+                    }
+                    otherCount++;
+                }
+                
+               
+            }
+            Console.WriteLine(movieCount);
+            Console.WriteLine(otherCount);
+        }
+    }
+}
