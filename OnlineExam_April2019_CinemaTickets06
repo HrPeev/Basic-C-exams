@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExam_April2019_CinemaTickets06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string movie = Console.ReadLine();
+            int kidTickets = 0;
+            int studentTickets = 0;
+            int standartTickets = 0;
+
+            while (movie!="Finish")
+            {
+                
+                int places = int.Parse(Console.ReadLine());
+                string ticketTipe = string.Empty; ;
+                double counterPlaces = 0;
+                while (places>counterPlaces)
+                {
+                    ticketTipe = Console.ReadLine();
+                    if (ticketTipe=="End")
+                    {
+                        break;
+                    }
+                    ++counterPlaces;
+                    if (ticketTipe=="kid")
+                    {
+                        kidTickets++;
+                    }
+                    else if (ticketTipe=="standard")
+                    {
+                        standartTickets++;
+                    }
+                    else if(ticketTipe=="student")
+                    {
+                        studentTickets++;
+                    }
+                    
+                    
+                }
+                Console.WriteLine("{0} - {1:f2}% full.",movie,(counterPlaces/places)*100.0);
+                movie = Console.ReadLine();
+            }
+            double allTickets = kidTickets + standartTickets + studentTickets;
+            Console.WriteLine("Total tickets: {0}",allTickets);
+            Console.WriteLine("{0:f2}% student tickets.",(studentTickets/allTickets)*100.0);
+            Console.WriteLine("{0:f2}% standard tickets.", (standartTickets / allTickets) * 100.0);
+            Console.WriteLine("{0:f2}% kids tickets.", (kidTickets / allTickets) * 100.0);
+        }
+    }
+}
