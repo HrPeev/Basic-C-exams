@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BasicsOnlineExam_April2019_OscarsCeremony01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int hallRent = int.Parse(Console.ReadLine());
+            double oscars = hallRent * 0.7;
+            double food = oscars * 0.85;
+            double sound = food * 0.5;
+            double total = hallRent + oscars + food + sound;
+            Console.WriteLine("{0:f2}",total);
+        }
+    }
+}
