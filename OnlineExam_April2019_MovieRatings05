@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineExam_April2019_MovieRatings05
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int movies = int.Parse(Console.ReadLine());
+            double topRating = 0.0;
+            double lowRating = 0.0;
+            double averageRating = 0.0;
+            string topMovie = string.Empty;
+            string badMovie = string.Empty;
+            for (int i = 0; i < movies; i++)
+            {
+                string curentMovie = Console.ReadLine();
+                double curentRating = double.Parse(Console.ReadLine());
+                if (i==0)
+                {
+                    topRating = curentRating;
+                    lowRating = curentRating;
+                    topMovie = curentMovie;
+                    badMovie = curentMovie;
+                }
+                if (i>0)
+                {
+                    if (topRating<curentRating)
+                    {
+                        topRating = curentRating;
+                        topMovie = curentMovie;
+                    }
+                    else if (lowRating>curentRating)
+                    {
+                        lowRating = curentRating;
+                        badMovie = curentMovie;
+                    }
+                }
+                averageRating += curentRating;
+            }
+            Console.WriteLine("{0} is with highest rating: {1:f1}",topMovie,topRating);
+            Console.WriteLine("{0} is with lowest rating: {1:f1}",badMovie,lowRating);
+            Console.WriteLine("Average rating: {0:f1}",averageRating/movies);
+        }
+    }
+}
